@@ -8,12 +8,8 @@ import javax.validation.ConstraintValidatorContext;
 public class IdCardValidator implements ConstraintValidator<IdCard, String> {
 
     @Override
-    public void initialize(IdCard constraintAnnotation) {
-    }
-
-    @Override
     public boolean isValid(String idCard, ConstraintValidatorContext context) {
-        if (idCard == null || idCard.length() == 0) {
+        if (idCard == null || idCard.trim().isEmpty()) {
             return true;
         }
         return Validator.isCitizenId(idCard);
