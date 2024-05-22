@@ -34,7 +34,7 @@ public class DemoController {
 
     @Builder
     @Data
-    static class User {
+    public static class User {
         private String name;
         private Long id;
         private Integer age;
